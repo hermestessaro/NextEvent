@@ -9,5 +9,5 @@ interface EventRepository {
 
     suspend fun getEventById(eventId: String): Event
 
-    suspend fun doCheckin(checkinModel: CheckinModel)
+    suspend fun doCheckIn(checkinModel: CheckinModel)
 }

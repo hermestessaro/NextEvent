@@ -18,7 +18,7 @@ class EventRepositoryImpl @Inject constructor(
         return api.getEventById(eventId)
     }
 
-    override suspend fun doCheckin(checkinModel: CheckinModel) {
+    override suspend fun doCheckIn(checkinModel: CheckinModel) {
         api.doCheckin(checkinModel)
     }
 }
