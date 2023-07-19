@@ -51,7 +51,7 @@ fun EventFeed(
                 EventFeedItem(
                     event = event,
                     onItemClick = {
-                        navController.navigate(Destination.EventDetailScreen.createRoute(event.id))
+                        navController.navigate(Destination.EventDetailScreen.route + "/${event.id}")
                     }
                 )
             }

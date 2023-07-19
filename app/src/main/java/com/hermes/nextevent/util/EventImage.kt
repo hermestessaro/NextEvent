@@ -1,4 +1,4 @@
-package com.hermes.nextevent.presentation.eventfeed.components
+package com.hermes.nextevent.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

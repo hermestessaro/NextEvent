@@ -8,10 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.hermes.nextevent.domain.use_case.get_event.GetEventByIdUseCase
 import com.hermes.nextevent.util.Constants
 import com.hermes.nextevent.util.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class EventDetailViewModel @Inject constructor(
     private val getEventByIdUseCase: GetEventByIdUseCase,
     savedStateHandle: SavedStateHandle

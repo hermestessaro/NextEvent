@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.hermes.nextevent.presentation.eventdetail.EventDetail
 import com.hermes.nextevent.presentation.eventfeed.EventFeed
 
 @Composable
@@ -17,11 +18,8 @@ fun NavGraph(
             composable(route = Destination.EventFeedScreen.route) {
                 EventFeed(navController)
             }
-            composable(route = Destination.EventDetailScreen.route) { navBackStackEntry ->
-                val id = navBackStackEntry.arguments?.getString("eventId")?.toIntOrNull()
-                if(id != null) {
-                    //TODO
-                }
+            composable(route = Destination.EventDetailScreen.route + "/{eventId}") {
+                EventDetail()
             }
 
         })

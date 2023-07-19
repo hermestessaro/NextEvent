@@ -16,6 +16,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hermes.nextevent.data.remote.model.Event
+import com.hermes.nextevent.util.EventImage
 
 @Composable
 fun EventFeedItem(

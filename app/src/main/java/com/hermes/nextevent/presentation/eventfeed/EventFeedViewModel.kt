@@ -4,6 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hermes.nextevent.data.remote.model.Event
 import com.hermes.nextevent.domain.use_case.get_events.GetEventsUseCase
 import com.hermes.nextevent.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
