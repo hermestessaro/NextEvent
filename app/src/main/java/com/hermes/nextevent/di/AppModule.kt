@@ -4,6 +4,7 @@ import com.hermes.nextevent.data.remote.ApiService
 import com.hermes.nextevent.data.remote.EventApi
 import com.hermes.nextevent.data.remote.repository.EventRepositoryImpl
 import com.hermes.nextevent.domain.repository.EventRepository
+import com.hermes.nextevent.domain.use_case.share.ShareUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +25,11 @@ object AppModule {
     @Singleton
     fun provideEventRepository(api: EventApi): EventRepository {
         return EventRepositoryImpl(api)
+    }
+
+    @Provides
+    fun provideShareUseCase(): ShareUseCase {
+        return ShareUseCase()
     }
 
 }

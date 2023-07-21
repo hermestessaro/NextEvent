@@ -1,6 +1,6 @@
 package com.hermes.nextevent.presentation.eventdetail
 
-import android.util.Log
+import android.content.Context
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.hermes.nextevent.data.remote.model.CheckinModel
 import com.hermes.nextevent.domain.use_case.check_in.CheckInUseCase
 import com.hermes.nextevent.domain.use_case.get_event.GetEventByIdUseCase
+import com.hermes.nextevent.domain.use_case.share.ShareUseCase
 import com.hermes.nextevent.util.Constants
 import com.hermes.nextevent.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +21,7 @@ import javax.inject.Inject
 class EventDetailViewModel @Inject constructor(
     private val getEventByIdUseCase: GetEventByIdUseCase,
     private val checkInUseCase: CheckInUseCase,
+    private val shareUseCase: ShareUseCase,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
@@ -71,5 +73,9 @@ class EventDetailViewModel @Inject constructor(
                 }
             }.launchIn(viewModelScope)
         }
+    }
+
+    fun shareEvent(text: String, context: Context) {
+        shareUseCase(text, context)
     }
 }
