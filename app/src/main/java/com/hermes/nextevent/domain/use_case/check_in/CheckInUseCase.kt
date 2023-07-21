@@ -18,7 +18,11 @@ class CheckInUseCase @Inject constructor(
         try {
             emit(NetworkResult.Loading())
             val response = repository.doCheckIn(checkinModel)
-            emit(NetworkResult.Success(response))
+            if(response.isSuccessful){
+                emit(NetworkResult.Success())
+            } else {
+                emit(NetworkResult.Error(response.errorBody().toString()))
+            }
         } catch (e: HttpException) {
             emit(NetworkResult.Error(e.localizedMessage ?: "Um erro ocorreu."))
         } catch (e: IOException) {

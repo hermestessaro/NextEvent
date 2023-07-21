@@ -2,6 +2,8 @@ package com.hermes.nextevent.data.remote
 
 import com.hermes.nextevent.data.remote.model.CheckinModel
 import com.hermes.nextevent.data.remote.model.Event
+import okhttp3.ResponseBody
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -15,5 +17,5 @@ interface EventApi {
     suspend fun getEventById(@Path("eventId") eventId: String): Event
 
     @POST("checkin")
-    suspend fun doCheckin(@Body checkinModel: CheckinModel)
+    suspend fun doCheckin(@Body checkinModel: CheckinModel): Response<ResponseBody>
 }
