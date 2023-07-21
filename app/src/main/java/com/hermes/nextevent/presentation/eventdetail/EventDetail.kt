@@ -64,7 +64,7 @@ fun EventDetail(
                 if(checkInState.error.isNotBlank()) {
                     showSnackbar(snackbarHostState = snackbarHostState, text = checkInState.error)
                 }
-                if(checkInState.code.isNotEmpty()) {
+                if(!checkInState.code.isNullOrEmpty()) {
                     showSnackbar(snackbarHostState = snackbarHostState, text = "Check In realizado!")
                 }
                 eventState.event?.let{event ->

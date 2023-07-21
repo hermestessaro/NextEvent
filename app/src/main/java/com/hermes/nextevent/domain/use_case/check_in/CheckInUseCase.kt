@@ -14,12 +14,12 @@ class CheckInUseCase @Inject constructor(
     private val repository: EventRepository
 ) {
 
-    operator fun invoke(checkinModel: CheckinModel): Flow<NetworkResult<Any>> = flow {
+    operator fun invoke(checkinModel: CheckinModel): Flow<NetworkResult<String>> = flow {
         try {
             emit(NetworkResult.Loading())
             val response = repository.doCheckIn(checkinModel)
             if(response.isSuccessful){
-                emit(NetworkResult.Success())
+                emit(NetworkResult.Success(response.code().toString()))
             } else {
                 emit(NetworkResult.Error(response.errorBody().toString()))
             }

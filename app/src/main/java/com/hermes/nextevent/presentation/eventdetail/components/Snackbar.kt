@@ -19,7 +19,7 @@ fun showSnackbar(
             snackbarHostState.showSnackbar(
                 message = text,
                 actionLabel = "Fechar",
-                duration = SnackbarDuration.Long
+                duration = SnackbarDuration.Short
             )
         }
     }

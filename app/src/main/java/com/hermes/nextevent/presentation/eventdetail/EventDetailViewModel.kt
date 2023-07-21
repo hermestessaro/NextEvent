@@ -58,11 +58,9 @@ class EventDetailViewModel @Inject constructor(
             checkInUseCase(checkInModel).onEach { networkResult ->
                 when(networkResult){
                         is NetworkResult.Success -> {
-                        _checkInState.value = CheckInState(code = networkResult.data.toString())
-                        Log.d("debug_hermes", networkResult.data.toString())
+                        _checkInState.value = CheckInState(code = networkResult.data)
                     }
                     is NetworkResult.Error -> {
-                        Log.d("debug_hermes", networkResult.message ?: "deu ruim")
                         _checkInState.value = CheckInState(
                             error = networkResult.message ?: "Um erro inesperado aconteceu"
                         )
@@ -71,7 +69,7 @@ class EventDetailViewModel @Inject constructor(
                         _checkInState.value = CheckInState(isLoading = true)
                     }
                 }
-            }
+            }.launchIn(viewModelScope)
         }
     }
 }
