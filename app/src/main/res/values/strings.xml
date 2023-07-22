@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">NextEvent</string>
     <string name="shareable_text_template">
-        Você quer curtir este evento comigo?
-        O que: %s
-        Data: %s
+        Você quer curtir este evento comigo?\n
+        O que: %s\n
+        Data: %s\n
         %s
     </string>
     <string name="do_checkIn">FAZER CHECK-IN</string>

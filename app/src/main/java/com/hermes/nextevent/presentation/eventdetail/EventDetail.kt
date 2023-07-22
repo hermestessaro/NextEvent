@@ -32,6 +32,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.hermes.nextevent.R
 import com.hermes.nextevent.presentation.eventdetail.components.CheckInDialog
 import com.hermes.nextevent.presentation.eventdetail.components.EventDetailButton
+import com.hermes.nextevent.presentation.eventdetail.components.MapViewContainer
 import com.hermes.nextevent.presentation.eventdetail.components.showSnackbar
 import com.hermes.nextevent.util.EventImage
 
@@ -104,6 +105,9 @@ fun EventDetail(
                             top = 12.dp,
                             bottom = 8.dp)
                     )
+
+                    MapViewContainer(event = event)
+
                     EventDetailButton(
                         onButtonClick = { showDialog.value = true },
                         modifier = Modifier
