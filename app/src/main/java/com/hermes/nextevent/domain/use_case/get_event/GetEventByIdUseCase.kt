@@ -17,7 +17,9 @@ class GetEventByIdUseCase @Inject constructor(
         try {
             emit(NetworkResult.Loading())
             val event = repository.getEventById(eventId)
-            emit(NetworkResult.Success(event))
+            event?.let {
+                emit(NetworkResult.Success(it))
+            }
         } catch (e: HttpException) {
             emit(NetworkResult.Error(e.localizedMessage ?: "Um erro ocorreu."))
         } catch (e: IOException) {

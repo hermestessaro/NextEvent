@@ -9,7 +9,7 @@ interface EventRepository {
 
     suspend fun getEvents(): List<Event>
 
-    suspend fun getEventById(eventId: String): Event
+    suspend fun getEventById(eventId: String): Event?
 
     suspend fun doCheckIn(checkinModel: CheckinModel): Response<ResponseBody>
 }
