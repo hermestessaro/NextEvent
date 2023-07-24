@@ -17,8 +17,8 @@ class EventFeedViewModel @Inject constructor(
     private val getEventsUseCase: GetEventsUseCase
 ): ViewModel() {
 
-    private val _state = mutableStateOf(EventFeedState())
-    val state: State<EventFeedState> = _state
+    private var _state = mutableStateOf(EventFeedState())
+    var state: State<EventFeedState> = _state
 
     init {
         getEvents()
