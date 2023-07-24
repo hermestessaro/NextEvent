@@ -2,7 +2,6 @@ package com.hermes.nextevent.presentation.eventdetail
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -30,6 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.hermes.nextevent.R
 import com.hermes.nextevent.presentation.eventdetail.components.CheckInDialog
 import com.hermes.nextevent.presentation.eventdetail.components.EventDetailButton

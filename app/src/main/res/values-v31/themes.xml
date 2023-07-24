@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Theme.NextEvent" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowSplashScreenBackground">@android:color/holo_red_light</item>
+        <item name="android:windowSplashScreenBackground">@android:color/holo_orange_dark</item>
     </style>
 </resources>

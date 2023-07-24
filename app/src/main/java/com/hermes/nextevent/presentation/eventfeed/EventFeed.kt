@@ -1,5 +1,6 @@
 package com.hermes.nextevent.presentation.eventfeed
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -28,7 +29,7 @@ fun EventFeed(
 ) {
     val state = viewModel.state.value
 
-    Box(modifier = Modifier.fillMaxSize().padding(vertical = 8.dp)) {
+    Box(modifier = Modifier.fillMaxSize()) {
         if (state.error.isNotBlank()) {
             Text(
                 text = state.error,
@@ -44,7 +45,7 @@ fun EventFeed(
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
         LazyColumn(
-            modifier = Modifier.fillMaxSize().padding(horizontal = 12.dp),
+            modifier = Modifier.fillMaxSize().padding(horizontal = 4.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
             items(state.events) { event ->
