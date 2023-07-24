@@ -70,25 +70,6 @@ class EventDetailViewModelTest {
         assert(eventDetailViewModel.eventState.value.error.isNotEmpty())
     }
 
-    /*@Test
-    fun `successful call to checkInUseCase should make viewModel state also successful`() = runTest {
-        coEvery { getEventByIdUseCase("1") } returns flow { emit(NetworkResult.Success(getEvent())) }
-        coEvery { checkInUseCase(getCheckIn()) } returns flow { emit(NetworkResult.Success("200"))}
-        eventDetailViewModel = EventDetailViewModel(getEventByIdUseCase,checkInUseCase,shareUseCase, savedStateHandle)
-        eventDetailViewModel.doCheckIn("nome", "email@gmail.com")
-        delay(2000)
-        assert(!eventDetailViewModel.checkInState.value.code.isNullOrEmpty())
-    }
-
-    @Test
-    fun `unsuccessful call to checkInUseCase should make viewModel state give error`() = runTest{
-        coEvery { getEventByIdUseCase("1") } returns flow { emit(NetworkResult.Success(getEvent())) }
-        coEvery { checkInUseCase(getCheckIn()) } returns flow { emit(NetworkResult.Error("error"))}
-        eventDetailViewModel = EventDetailViewModel(getEventByIdUseCase,checkInUseCase,shareUseCase, savedStateHandle)
-        eventDetailViewModel.doCheckIn("nome", "email")
-        assert(eventDetailViewModel.checkInState.value.error.isNotEmpty())
-    }*/
-
     private fun getEvent(): Event {
         return Event(
             listOf(),
@@ -103,7 +84,4 @@ class EventDetailViewModelTest {
         )
     }
 
-    private fun getCheckIn(): CheckinModel {
-        return CheckinModel("1","name", "email")
-    }
 }
